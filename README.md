@@ -43,7 +43,7 @@ I'm the creator of **[PraisonAI](https://github.com/MervinPraison/PraisonAI)** â
 ## ğŸŒŸ Featured: PraisonAI
 
 <a href="https://github.com/MervinPraison/PraisonAI">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=MervinPraison&repo=PraisonAI&theme=tokyonight&hide_border=true" />
+  <img align="center" src="https://github-readme-stats-fast.vercel.app/api/pin/?username=MervinPraison&repo=PraisonAI&theme=tokyonight&hide_border=true" />
 </a>
 
 <br/><br/>
@@ -105,21 +105,9 @@ I'm the creator of **[PraisonAI](https://github.com/MervinPraison/PraisonAI)** â
 
 ## ğŸ“Š GitHub Stats
 
+<!-- Self-generated metrics - updates every 6 hours via GitHub Actions -->
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=MervinPraison&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="GitHub Stats" height="180"/>
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=MervinPraison&theme=tokyonight&hide_border=true" alt="GitHub Streak" height="180"/>
-</p>
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=MervinPraison&layout=compact&theme=tokyonight&hide_border=true&langs_count=8" alt="Top Languages"/>
-</p>
-
----
-
-## ğŸ† GitHub Trophies
-
-<p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=MervinPraison&theme=tokyonight&no-frame=true&row=1&column=7" alt="Trophies"/>
+  <img src="https://raw.githubusercontent.com/MervinPraison/MervinPraison/main/generated/github-metrics.svg" alt="GitHub Metrics"/>
 </p>
 
 ---
@@ -131,7 +119,7 @@ I'm the creator of **[PraisonAI](https://github.com/MervinPraison/PraisonAI)** â
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=MervinPraison&theme=tokyo-night&hide_border=true&area=true" alt="Activity Graph"/>
 </p>
 
-<!-- 3D Contribution Calendar -->
+<!-- 3D Contribution Calendar - Self-generated via GitHub Actions -->
 <p align="center">
   <img src="https://raw.githubusercontent.com/MervinPraison/MervinPraison/main/profile-3d-contrib/profile-night-rainbow.svg" alt="3D Contribution"/>
 </p>
