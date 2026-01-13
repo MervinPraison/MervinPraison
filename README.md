@@ -61,17 +61,44 @@ I'm the creator of **[PraisonAI](https://github.com/MervinPraison/PraisonAI)** ‚
 
 ## üõ†Ô∏è Tech Stack
 
+**Languages & Frameworks**
 <p align="left">
   <img src="https://go-skill-icons.vercel.app/api/icons?i=python" width="50" alt="Python"/>
   <img src="https://go-skill-icons.vercel.app/api/icons?i=typescript" width="50" alt="TypeScript"/>
-  <img src="https://go-skill-icons.vercel.app/api/icons?i=openai" width="50" alt="OpenAI"/>
-  <img src="https://go-skill-icons.vercel.app/api/icons?i=langchain" width="50" alt="LangChain"/>
-  <img src="https://go-skill-icons.vercel.app/api/icons?i=docker" width="50" alt="Docker"/>
+  <img src="https://go-skill-icons.vercel.app/api/icons?i=javascript" width="50" alt="JavaScript"/>
+  <img src="https://go-skill-icons.vercel.app/api/icons?i=rust" width="50" alt="Rust"/>
   <img src="https://go-skill-icons.vercel.app/api/icons?i=fastapi" width="50" alt="FastAPI"/>
-  <img src="https://go-skill-icons.vercel.app/api/icons?i=postgresql" width="50" alt="PostgreSQL"/>
-  <img src="https://go-skill-icons.vercel.app/api/icons?i=redis" width="50" alt="Redis"/>
   <img src="https://go-skill-icons.vercel.app/api/icons?i=nextjs" width="50" alt="Next.js"/>
   <img src="https://go-skill-icons.vercel.app/api/icons?i=react" width="50" alt="React"/>
+</p>
+
+**AI & ML**
+<p align="left">
+  <img src="https://go-skill-icons.vercel.app/api/icons?i=openai" width="50" alt="OpenAI"/>
+  <img src="https://go-skill-icons.vercel.app/api/icons?i=langchain" width="50" alt="LangChain"/>
+  <img src="https://go-skill-icons.vercel.app/api/icons?i=pytorch" width="50" alt="PyTorch"/>
+  <img src="https://go-skill-icons.vercel.app/api/icons?i=huggingface" width="50" alt="Hugging Face"/>
+</p>
+
+**DevOps & Infrastructure**
+<p align="left">
+  <img src="https://go-skill-icons.vercel.app/api/icons?i=docker" width="50" alt="Docker"/>
+  <img src="https://go-skill-icons.vercel.app/api/icons?i=kubernetes" width="50" alt="Kubernetes"/>
+  <img src="https://go-skill-icons.vercel.app/api/icons?i=githubactions" width="50" alt="GitHub Actions"/>
+  <img src="https://go-skill-icons.vercel.app/api/icons?i=terraform" width="50" alt="Terraform"/>
+  <img src="https://go-skill-icons.vercel.app/api/icons?i=azure" width="50" alt="Azure"/>
+  <img src="https://go-skill-icons.vercel.app/api/icons?i=gcp" width="50" alt="GCP"/>
+  <img src="https://go-skill-icons.vercel.app/api/icons?i=aws" width="50" alt="AWS"/>
+</p>
+
+**Databases & Tools**
+<p align="left">
+  <img src="https://go-skill-icons.vercel.app/api/icons?i=postgresql" width="50" alt="PostgreSQL"/>
+  <img src="https://go-skill-icons.vercel.app/api/icons?i=redis" width="50" alt="Redis"/>
+  <img src="https://go-skill-icons.vercel.app/api/icons?i=mongodb" width="50" alt="MongoDB"/>
+  <img src="https://go-skill-icons.vercel.app/api/icons?i=elasticsearch" width="50" alt="Elasticsearch"/>
+  <img src="https://go-skill-icons.vercel.app/api/icons?i=git" width="50" alt="Git"/>
+  <img src="https://go-skill-icons.vercel.app/api/icons?i=linux" width="50" alt="Linux"/>
 </p>
 
 ---
@@ -97,13 +124,17 @@ I'm the creator of **[PraisonAI](https://github.com/MervinPraison/PraisonAI)** ‚
 
 ---
 
-## üêç Contribution Graph
+## üìà Contribution Activity
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/MervinPraison/MervinPraison/output/github-contribution-grid-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/MervinPraison/MervinPraison/output/github-contribution-grid-snake.svg" />
-  <img alt="github-snake" src="https://raw.githubusercontent.com/MervinPraison/MervinPraison/output/github-contribution-grid-snake.svg" />
-</picture>
+<!-- Activity Graph -->
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=MervinPraison&theme=tokyo-night&hide_border=true&area=true" alt="Activity Graph"/>
+</p>
+
+<!-- 3D Contribution Calendar -->
+<p align="center">
+  <img src="https://raw.githubusercontent.com/MervinPraison/MervinPraison/main/profile-3d-contrib/profile-night-rainbow.svg" alt="3D Contribution"/>
+</p>
 
 ---
 
@@ -112,7 +143,7 @@ I'm the creator of **[PraisonAI](https://github.com/MervinPraison/PraisonAI)** ‚
 <p align="left">
   <a href="https://mer.vin"><img src="https://img.shields.io/badge/Website-mer.vin-6C63FF?style=for-the-badge&logo=google-chrome&logoColor=white"/></a>
   <a href="https://twitter.com/MervinPraison"><img src="https://img.shields.io/badge/Twitter-@MervinPraison-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white"/></a>
-  <a href="https://linkedin.com/in/meraborhan"><img src="https://img.shields.io/badge/LinkedIn-meraborhan-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
+  <a href="https://linkedin.com/in/mervinpraison"><img src="https://img.shields.io/badge/LinkedIn-mervinpraison-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
   <a href="https://youtube.com/@MervinPraison"><img src="https://img.shields.io/badge/YouTube-@MervinPraison-FF0000?style=for-the-badge&logo=youtube&logoColor=white"/></a>
 </p>
 
