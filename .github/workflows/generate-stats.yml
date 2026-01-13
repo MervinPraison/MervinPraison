@@ -4,9 +4,6 @@ on:
   schedule:
     - cron: "0 */6 * * *" # Every 6 hours
   workflow_dispatch:
-  push:
-    branches:
-      - main
 
 jobs:
   generate-stats:
@@ -19,7 +16,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       
-      - name: Generate GitHub Stats Cards
+      - name: Generate GitHub Metrics
         uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -44,9 +41,6 @@ jobs:
           plugin_languages_categories: markup, programming
           plugin_languages_colors: github
           plugin_languages_limit: 8
-          plugin_languages_recent_categories: markup, programming
-          plugin_languages_recent_days: 14
-          plugin_languages_recent_load: 300
           plugin_languages_sections: most-used
           plugin_languages_threshold: 0%
           
@@ -58,17 +52,6 @@ jobs:
           plugin_notable: yes
           plugin_notable_from: organization
           plugin_notable_types: commit
-      
-      - name: Generate Streak Stats
-        uses: DenverCoder1/github-readme-streak-stats@main
-        id: streak
-        with:
-          user: MervinPraison
-          theme: tokyonight
-          hide_border: true
-          mode: weekly
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Commit and push changes
         run: |
