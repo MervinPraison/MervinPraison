@@ -114,6 +114,43 @@ I'm the creator of **[PraisonAI](https://github.com/MervinPraison/PraisonAI)** �
 
 ---
 
+## 🚀 My Projects
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <a href="https://docs.praison.ai"><img src="https://img.shields.io/badge/PraisonAI-docs.praison.ai-6C63FF?style=for-the-badge&logo=robot&logoColor=white"/></a><br/>
+      <sub><b>Production-ready AI Agents framework with 100+ tools</b></sub>
+    </td>
+    <td align="center" width="50%">
+      <a href="https://wpcli.praison.ai"><img src="https://img.shields.io/badge/PraisonAI_WP-wpcli.praison.ai-21759B?style=for-the-badge&logo=wordpress&logoColor=white"/></a><br/>
+      <sub><b>AI-powered WordPress management via WP-CLI over SSH</b></sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <a href="https://ui.praison.ai"><img src="https://img.shields.io/badge/PraisonAI_UI-ui.praison.ai-FF6B6B?style=for-the-badge&logo=nextdotjs&logoColor=white"/></a><br/>
+      <sub><b>YAML-driven website generator with drag-and-drop builder</b></sub>
+    </td>
+    <td align="center" width="50%">
+      <a href="https://ppt.praison.ai"><img src="https://img.shields.io/badge/PraisonAI_PPT-ppt.praison.ai-FF9F43?style=for-the-badge&logo=slides&logoColor=white"/></a><br/>
+      <sub><b>AI-powered presentation generator from prompts</b></sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <a href="https://testgen.praison.ai"><img src="https://img.shields.io/badge/PraisonAI_TestGen-testgen.praison.ai-10B981?style=for-the-badge&logo=pytest&logoColor=white"/></a><br/>
+      <sub><b>Automated test generation for Python projects</b></sub>
+    </td>
+    <td align="center" width="50%">
+      <a href="https://testagent.praison.ai"><img src="https://img.shields.io/badge/PraisonAI_TestAgent-testagent.praison.ai-8B5CF6?style=for-the-badge&logo=testcafe&logoColor=white"/></a><br/>
+      <sub><b>AI agent for automated software testing</b></sub>
+    </td>
+  </tr>
+</table>
+
+---
+
 <p align="center">
   <i>💡 Building what's next in AI Agents? Let's connect and collaborate!</i>
 </p>
