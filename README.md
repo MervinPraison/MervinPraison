@@ -162,9 +162,24 @@ I'm the creator of **[PraisonAI](https://github.com/MervinPraison/PraisonAI)** â
       <a href="https://svc.praison.ai"><img src="https://img.shields.io/badge/PraisonAI_SVC-svc.praison.ai-6366F1?style=for-the-badge&logo=microsoftazure&logoColor=white"/></a><br/>
       <sub><b>Turn PraisonAI packages into Azure web services</b></sub>
     </td>
+  <tr>
     <td align="center" width="50%">
       <a href="https://n8n.praison.ai"><img src="https://img.shields.io/badge/PraisonAI_n8n-n8n.praison.ai-EC4899?style=for-the-badge&logo=n8n&logoColor=white"/></a><br/>
       <sub><b>n8n community node for AI agent workflows</b></sub>
+    </td>
+    <td align="center" width="50%">
+      <a href="https://seo.praison.ai"><img src="https://img.shields.io/badge/SEO_Plugin-seo.praison.ai-21759B?style=for-the-badge&logo=wordpress&logoColor=white"/></a><br/>
+      <sub><b>WordPress SEO optimization plugin</b></sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <a href="https://wpgit.praison.ai"><img src="https://img.shields.io/badge/WP_Git_Posts-wpgit.praison.ai-21759B?style=for-the-badge&logo=wordpress&logoColor=white"/></a><br/>
+      <sub><b>Sync WordPress posts with Git repositories</b></sub>
+    </td>
+    <td align="center" width="50%">
+      <a href="https://wp.praison.ai"><img src="https://img.shields.io/badge/WP_Plugin-wp.praison.ai-21759B?style=for-the-badge&logo=wordpress&logoColor=white"/></a><br/>
+      <sub><b>PraisonAI WordPress Plugin documentation</b></sub>
     </td>
   </tr>
 </table>
