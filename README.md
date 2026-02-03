@@ -182,6 +182,34 @@ I'm the creator of **[PraisonAI](https://github.com/MervinPraison/PraisonAI)** â
       <sub><b>PraisonAI WordPress Plugin documentation</b></sub>
     </td>
   </tr>
+  <tr>
+    <td align="center" width="50%">
+      <a href="https://mervinpraison.github.io/categories-page"><img src="https://img.shields.io/badge/Categories_Page-GitHub-21759B?style=for-the-badge&logo=wordpress&logoColor=white"/></a><br/>
+      <sub><b>Display categories with sortable table</b></sub>
+    </td>
+    <td align="center" width="50%">
+      <a href="https://mervinpraison.github.io/featured-image"><img src="https://img.shields.io/badge/Featured_Image-GitHub-21759B?style=for-the-badge&logo=wordpress&logoColor=white"/></a><br/>
+      <sub><b>Display featured images via shortcode</b></sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <a href="https://mervinpraison.github.io/wordpress-clock"><img src="https://img.shields.io/badge/Live_Clock-GitHub-21759B?style=for-the-badge&logo=wordpress&logoColor=white"/></a><br/>
+      <sub><b>Analog/digital clock widget</b></sub>
+    </td>
+    <td align="center" width="50%">
+      <a href="https://mervinpraison.github.io/meta"><img src="https://img.shields.io/badge/Meta_Content-GitHub-21759B?style=for-the-badge&logo=wordpress&logoColor=white"/></a><br/>
+      <sub><b>Add custom content per post/page</b></sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <a href="https://mervinpraison.github.io/google-plus-author"><img src="https://img.shields.io/badge/Google_Authorship-GitHub-21759B?style=for-the-badge&logo=wordpress&logoColor=white"/></a><br/>
+      <sub><b>Google Plus profile integration</b></sub>
+    </td>
+    <td align="center" width="50%">
+    </td>
+  </tr>
 </table>
 
 ---
