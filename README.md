@@ -147,6 +147,26 @@ I'm the creator of **[PraisonAI](https://github.com/MervinPraison/PraisonAI)** â
       <sub><b>AI agent for automated software testing</b></sub>
     </td>
   </tr>
+  <tr>
+    <td align="center" width="50%">
+      <a href="https://chrome.praison.ai"><img src="https://img.shields.io/badge/PraisonAI_Chrome-chrome.praison.ai-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white"/></a><br/>
+      <sub><b>AI-powered browser automation extension</b></sub>
+    </td>
+    <td align="center" width="50%">
+      <a href="https://bench.praison.ai"><img src="https://img.shields.io/badge/PraisonAI_Bench-bench.praison.ai-14B8A6?style=for-the-badge&logo=speedtest&logoColor=white"/></a><br/>
+      <sub><b>LLM Benchmarking Tool using PraisonAI Agents</b></sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <a href="https://svc.praison.ai"><img src="https://img.shields.io/badge/PraisonAI_SVC-svc.praison.ai-6366F1?style=for-the-badge&logo=microsoftazure&logoColor=white"/></a><br/>
+      <sub><b>Turn PraisonAI packages into Azure web services</b></sub>
+    </td>
+    <td align="center" width="50%">
+      <a href="https://n8n.praison.ai"><img src="https://img.shields.io/badge/PraisonAI_n8n-n8n.praison.ai-EC4899?style=for-the-badge&logo=n8n&logoColor=white"/></a><br/>
+      <sub><b>n8n community node for AI agent workflows</b></sub>
+    </td>
+  </tr>
 </table>
 
 ---
