@@ -163,7 +163,7 @@ I'm the creator of **[PraisonAI](https://github.com/MervinPraison/PraisonAI)** â
       <sub><b>Turn PraisonAI packages into Azure web services</b></sub>
     </td>
     <td align="center" width="50%">
-      <a href="https://editing.praison.ai"><img src="https://img.shields.io/badge/PraisonAI_Editing-editing.praison.ai-E11D48?style=for-the-badge&logo=ffmpeg&logoColor=white"/></a><br/>
+      <a href="https://editor.praison.ai"><img src="https://img.shields.io/badge/PraisonAI_Editor-editor.praison.ai-E11D48?style=for-the-badge&logo=ffmpeg&logoColor=white"/></a><br/>
       <sub><b>AI-powered audio &amp; video editing</b></sub>
     </td>
   </tr>
