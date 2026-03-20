@@ -162,6 +162,11 @@ I'm the creator of **[PraisonAI](https://github.com/MervinPraison/PraisonAI)** â
       <a href="https://svc.praison.ai"><img src="https://img.shields.io/badge/PraisonAI_SVC-svc.praison.ai-6366F1?style=for-the-badge&logo=microsoftazure&logoColor=white"/></a><br/>
       <sub><b>Turn PraisonAI packages into Azure web services</b></sub>
     </td>
+    <td align="center" width="50%">
+      <a href="https://editing.praison.ai"><img src="https://img.shields.io/badge/PraisonAI_Editing-editing.praison.ai-E11D48?style=for-the-badge&logo=ffmpeg&logoColor=white"/></a><br/>
+      <sub><b>AI-powered audio, video, and code editing</b></sub>
+    </td>
+  </tr>
   <tr>
     <td align="center" width="50%">
       <a href="https://n8n.praison.ai"><img src="https://img.shields.io/badge/PraisonAI_n8n-n8n.praison.ai-EC4899?style=for-the-badge&logo=n8n&logoColor=white"/></a><br/>
