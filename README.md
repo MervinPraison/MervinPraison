@@ -28,6 +28,7 @@ I'm the creator of **[PraisonAI](https://github.com/MervinPraison/PraisonAI)** �
 - 🔹 Building production-grade AI agent frameworks
 - 🔹 Simplifying multi-agent orchestration for developers
 - 🔹 Passionate about making AI accessible and practical
+- 🔹 Guest Lecturer at **University of Westminster**, London
 
 ---
 
