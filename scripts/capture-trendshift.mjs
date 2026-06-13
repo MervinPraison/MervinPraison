@@ -10,7 +10,10 @@ const CHARTS = [
 await mkdir('generated', { recursive: true });
 
 const browser = await chromium.launch();
-const page = await browser.newPage({ viewport: { width: 1100, height: 900 } });
+const page = await browser.newPage({
+  viewport: { width: 1100, height: 900 },
+  deviceScaleFactor: 2,
+});
 
 await page.goto(DEVELOPER_URL, { waitUntil: 'networkidle' });
 await page.getByRole('heading', { name: 'GitHub trending history' }).waitFor();
@@ -23,7 +26,51 @@ await page.addStyleTag({
       max-width: 100% !important;
       margin: 0 0 1rem !important;
     }
+    section .bg-card > div:not(.absolute) {
+      height: 340px !important;
+    }
   `,
+});
+
+await page.evaluate(() => window.dispatchEvent(new Event('resize')));
+await page.waitForTimeout(1500);
+
+await page.evaluate(() => {
+  const isBackground = (r, g, b, a) => a < 20 || (r > 235 && g > 235 && b > 235);
+
+  for (const canvas of document.querySelectorAll('section canvas')) {
+    const ctx = canvas.getContext('2d');
+    if (!ctx) continue;
+
+    const { width, height } = canvas;
+    const source = ctx.getImageData(0, 0, width, height);
+    const output = new Uint8ClampedArray(source.data);
+
+    for (let pass = 0; pass < 2; pass += 1) {
+      const current = new Uint8ClampedArray(output);
+
+      for (let y = 0; y < height; y += 1) {
+        for (let x = 0; x < width; x += 1) {
+          const i = (y * width + x) * 4;
+          if (isBackground(current[i], current[i + 1], current[i + 2], current[i + 3])) continue;
+
+          for (const [dx, dy] of [[1, 0], [-1, 0], [0, 1], [0, -1], [1, 1], [-1, 1], [1, -1], [-1, -1]]) {
+            const nx = x + dx;
+            const ny = y + dy;
+            if (nx < 0 || ny < 0 || nx >= width || ny >= height) continue;
+
+            const ni = (ny * width + nx) * 4;
+            output[ni] = current[i];
+            output[ni + 1] = current[i + 1];
+            output[ni + 2] = current[i + 2];
+            output[ni + 3] = Math.max(output[ni + 3], current[i + 3]);
+          }
+        }
+      }
+    }
+
+    ctx.putImageData(new ImageData(output, width, height), 0, 0);
+  }
 });
 
 const section = page
@@ -47,7 +94,7 @@ await page.addStyleTag({
       color: #e6edf3 !important;
     }
     section .bg-card > div:not(.absolute) {
-      filter: invert(1) hue-rotate(180deg) brightness(0.95) contrast(0.95);
+      filter: invert(1) hue-rotate(180deg) brightness(0.95) contrast(1.05);
     }
   `,
 });
