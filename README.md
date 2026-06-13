@@ -230,7 +230,7 @@ I'm the creator of **[PraisonAI](https://github.com/MervinPraison/PraisonAI)** �
   </a>
 </p>
 
-## 📈 GitHub Trending History
+## 📈 Mervin Praison GitHub Trending History
 
 <p align="center">
   <a href="https://trendshift.io/developers/9425" target="_blank">
