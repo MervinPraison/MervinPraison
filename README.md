@@ -12,13 +12,6 @@
 </p>
 
 <p align="center">
-  <a href="https://trendshift.io/developers/9425" target="_blank">
-    <img src="https://raw.githubusercontent.com/MervinPraison/MervinPraison/main/generated/trendshift-all-language.png" alt="All Language GitHub Trending Ranking" width="440"/>
-    <img src="https://raw.githubusercontent.com/MervinPraison/MervinPraison/main/generated/trendshift-python.png" alt="Python GitHub Trending Ranking" width="440"/>
-  </a>
-</p>
-
-<p align="center">
   <img src="https://img.shields.io/badge/GitHub_Trending-%231-gold?style=for-the-badge&logo=github" alt="#1 Trending"/>
   <img src="https://img.shields.io/github/stars/MervinPraison/PraisonAI?style=for-the-badge&logo=github&label=PraisonAI%20Stars&color=6C63FF" alt="Stars"/>
   <img src="https://komarev.com/ghpvc/?username=MervinPraison&color=6C63FF&style=for-the-badge&label=Profile+Views" alt="Profile Views"/>
@@ -234,5 +227,25 @@ I'm the creator of **[PraisonAI](https://github.com/MervinPraison/PraisonAI)** â
 <p align="center">
   <a href="https://github.com/MervinPraison/PraisonAI">
     <img src="https://img.shields.io/badge/â­_Star_PraisonAI-6C63FF?style=for-the-badge" alt="Star PraisonAI"/>
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://trendshift.io/developers/9425" target="_blank">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/MervinPraison/MervinPraison/main/generated/trendshift-all-language-dark.png" />
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/MervinPraison/MervinPraison/main/generated/trendshift-all-language.png" />
+      <img src="https://raw.githubusercontent.com/MervinPraison/MervinPraison/main/generated/trendshift-all-language.png" alt="All Language GitHub Trending Ranking" width="100%"/>
+    </picture>
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://trendshift.io/developers/9425" target="_blank">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/MervinPraison/MervinPraison/main/generated/trendshift-python-dark.png" />
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/MervinPraison/MervinPraison/main/generated/trendshift-python.png" />
+      <img src="https://raw.githubusercontent.com/MervinPraison/MervinPraison/main/generated/trendshift-python.png" alt="Python GitHub Trending Ranking" width="100%"/>
+    </picture>
   </a>
 </p>
