@@ -230,22 +230,16 @@ I'm the creator of **[PraisonAI](https://github.com/MervinPraison/PraisonAI)** â
   </a>
 </p>
 
-<p align="center">
+<p>
   <a href="https://trendshift.io/developers/9425" target="_blank">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/MervinPraison/MervinPraison/main/generated/trendshift-all-language-dark.png" />
-      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/MervinPraison/MervinPraison/main/generated/trendshift-all-language.png" />
-      <img src="https://raw.githubusercontent.com/MervinPraison/MervinPraison/main/generated/trendshift-all-language.png" alt="All Language GitHub Trending Ranking" width="100%"/>
-    </picture>
+    <img src="https://raw.githubusercontent.com/MervinPraison/MervinPraison/main/generated/trendshift-all-language.png?v=3#gh-light-mode-only" alt="All Language GitHub Trending Ranking" width="100%"/>
+    <img src="https://raw.githubusercontent.com/MervinPraison/MervinPraison/main/generated/trendshift-all-language-dark.png?v=3#gh-dark-mode-only" alt="All Language GitHub Trending Ranking" width="100%"/>
   </a>
 </p>
 
-<p align="center">
+<p>
   <a href="https://trendshift.io/developers/9425" target="_blank">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/MervinPraison/MervinPraison/main/generated/trendshift-python-dark.png" />
-      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/MervinPraison/MervinPraison/main/generated/trendshift-python.png" />
-      <img src="https://raw.githubusercontent.com/MervinPraison/MervinPraison/main/generated/trendshift-python.png" alt="Python GitHub Trending Ranking" width="100%"/>
-    </picture>
+    <img src="https://raw.githubusercontent.com/MervinPraison/MervinPraison/main/generated/trendshift-python.png?v=3#gh-light-mode-only" alt="Python GitHub Trending Ranking" width="100%"/>
+    <img src="https://raw.githubusercontent.com/MervinPraison/MervinPraison/main/generated/trendshift-python-dark.png?v=3#gh-dark-mode-only" alt="Python GitHub Trending Ranking" width="100%"/>
   </a>
 </p>

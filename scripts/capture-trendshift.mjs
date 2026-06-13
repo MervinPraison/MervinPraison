@@ -11,7 +11,7 @@ await mkdir('generated', { recursive: true });
 
 const browser = await chromium.launch();
 const page = await browser.newPage({
-  viewport: { width: 1100, height: 900 },
+  viewport: { width: 900, height: 900 },
   deviceScaleFactor: 2,
 });
 
@@ -27,13 +27,13 @@ await page.addStyleTag({
       margin: 0 0 1rem !important;
     }
     section .bg-card > div:not(.absolute) {
-      height: 340px !important;
+      height: 360px !important;
     }
   `,
 });
 
 await page.evaluate(() => window.dispatchEvent(new Event('resize')));
-await page.waitForTimeout(1500);
+await page.waitForTimeout(2000);
 
 await page.evaluate(() => {
   const isBackground = (r, g, b, a) => a < 20 || (r > 235 && g > 235 && b > 235);
@@ -43,10 +43,9 @@ await page.evaluate(() => {
     if (!ctx) continue;
 
     const { width, height } = canvas;
-    const source = ctx.getImageData(0, 0, width, height);
-    const output = new Uint8ClampedArray(source.data);
+    const output = new Uint8ClampedArray(ctx.getImageData(0, 0, width, height).data);
 
-    for (let pass = 0; pass < 2; pass += 1) {
+    for (let pass = 0; pass < 3; pass += 1) {
       const current = new Uint8ClampedArray(output);
 
       for (let y = 0; y < height; y += 1) {
@@ -94,7 +93,7 @@ await page.addStyleTag({
       color: #e6edf3 !important;
     }
     section .bg-card > div:not(.absolute) {
-      filter: invert(1) hue-rotate(180deg) brightness(0.95) contrast(1.05);
+      filter: invert(1) hue-rotate(180deg) brightness(0.95) contrast(1.1);
     }
   `,
 });
