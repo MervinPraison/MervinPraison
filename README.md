@@ -230,16 +230,22 @@ I'm the creator of **[PraisonAI](https://github.com/MervinPraison/PraisonAI)** â
   </a>
 </p>
 
-<p>
+<p align="center">
   <a href="https://trendshift.io/developers/9425" target="_blank">
-    <img src="https://raw.githubusercontent.com/MervinPraison/MervinPraison/main/generated/trendshift-all-language.png?v=3#gh-light-mode-only" alt="All Language GitHub Trending Ranking" width="100%"/>
-    <img src="https://raw.githubusercontent.com/MervinPraison/MervinPraison/main/generated/trendshift-all-language-dark.png?v=3#gh-dark-mode-only" alt="All Language GitHub Trending Ranking" width="100%"/>
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/MervinPraison/MervinPraison/main/generated/trendshift-all-language-dark.svg?v=4" />
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/MervinPraison/MervinPraison/main/generated/trendshift-all-language.svg?v=4" />
+      <img src="https://raw.githubusercontent.com/MervinPraison/MervinPraison/main/generated/trendshift-all-language.svg?v=4" alt="All Language GitHub Trending Ranking" width="100%"/>
+    </picture>
   </a>
 </p>
 
-<p>
+<p align="center">
   <a href="https://trendshift.io/developers/9425" target="_blank">
-    <img src="https://raw.githubusercontent.com/MervinPraison/MervinPraison/main/generated/trendshift-python.png?v=3#gh-light-mode-only" alt="Python GitHub Trending Ranking" width="100%"/>
-    <img src="https://raw.githubusercontent.com/MervinPraison/MervinPraison/main/generated/trendshift-python-dark.png?v=3#gh-dark-mode-only" alt="Python GitHub Trending Ranking" width="100%"/>
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/MervinPraison/MervinPraison/main/generated/trendshift-python-dark.svg?v=4" />
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/MervinPraison/MervinPraison/main/generated/trendshift-python.svg?v=4" />
+      <img src="https://raw.githubusercontent.com/MervinPraison/MervinPraison/main/generated/trendshift-python.svg?v=4" alt="Python GitHub Trending Ranking" width="100%"/>
+    </picture>
   </a>
 </p>

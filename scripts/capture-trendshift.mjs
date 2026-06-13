@@ -1,107 +1,127 @@
-import { chromium } from 'playwright';
-import { mkdir } from 'fs/promises';
+import { mkdir, writeFile } from 'fs/promises';
 
 const DEVELOPER_URL = 'https://trendshift.io/developers/9425';
 const CHARTS = [
-  { label: 'all language ranking', name: 'trendshift-all-language' },
-  { label: 'python ranking', name: 'trendshift-python' },
+  { key: 'all-language', title: 'All Language Ranking', language: null },
+  { key: 'python', title: 'Python Ranking', language: 'python' },
 ];
+
+const WIDTH = 1100;
+const HEIGHT = 340;
+const PADDING = { top: 52, right: 28, bottom: 64, left: 52 };
+const MAX_RANK = 25;
+const LABEL_COUNT = 8;
+
+const THEMES = {
+  light: {
+    bg: '#ffffff',
+    border: '#e5e7eb',
+    text: '#111827',
+    muted: '#6b7280',
+    line: '#4f46e5',
+    grid: '#e5e7eb',
+  },
+  dark: {
+    bg: '#161b22',
+    border: '#30363d',
+    text: '#e6edf3',
+    muted: '#8b949e',
+    line: '#818cf8',
+    grid: '#30363d',
+  },
+};
+
+function extractTrendings(html) {
+  const trendings = [];
+  const pattern =
+    /trending_language\\":(null|\\"[^\\"]*\\"),\\"trend_date\\":\\"([^\\"]+)\\",\\"rank\\":(\d+)/g;
+
+  for (const match of html.matchAll(pattern)) {
+    trendings.push({
+      language: match[1] === 'null' ? null : match[1].slice(2, -2),
+      date: match[2].slice(0, 10),
+      rank: Number(match[3]),
+    });
+  }
+
+  if (!trendings.length) {
+    throw new Error('No Trendshift ranking data found in page HTML');
+  }
+
+  return trendings;
+}
+
+function buildSvg(title, points, themeName) {
+  const theme = THEMES[themeName];
+  const plotWidth = WIDTH - PADDING.left - PADDING.right;
+  const plotHeight = HEIGHT - PADDING.top - PADDING.bottom;
+  const lastIndex = Math.max(points.length - 1, 1);
+
+  const xAt = (index) => PADDING.left + (index / lastIndex) * plotWidth;
+  const yAt = (rank) => PADDING.top + (rank / MAX_RANK) * plotHeight;
+
+  const linePath = points
+    .map((point, index) => `${index === 0 ? 'M' : 'L'}${xAt(index).toFixed(1)},${yAt(point.rank).toFixed(1)}`)
+    .join(' ');
+
+  const labelIndexes = Array.from({ length: LABEL_COUNT }, (_, index) =>
+    Math.round((index * lastIndex) / (LABEL_COUNT - 1)),
+  );
+
+  const gridLines = [5, 10, 15, 20, 25]
+    .map(
+      (rank) =>
+        `<line x1="${PADDING.left}" y1="${yAt(rank)}" x2="${WIDTH - PADDING.right}" y2="${yAt(rank)}" stroke="${theme.grid}" stroke-dasharray="5 5" stroke-width="1"/>`,
+    )
+    .join('');
+
+  const yLabels = [0, 5, 10, 15, 20, 25]
+    .map(
+      (rank) =>
+        `<text x="${PADDING.left - 10}" y="${yAt(rank) + 4}" fill="${theme.muted}" font-size="12" text-anchor="end" font-family="system-ui,-apple-system,sans-serif">${rank}</text>`,
+    )
+    .join('');
+
+  const markers = points
+    .map(
+      (point, index) =>
+        `<circle cx="${xAt(index).toFixed(1)}" cy="${yAt(point.rank).toFixed(1)}" r="4.5" fill="${theme.bg}" stroke="${theme.line}" stroke-width="3"/>`,
+    )
+    .join('');
+
+  const xLabels = labelIndexes
+    .map(
+      (index) =>
+        `<text x="${xAt(index).toFixed(1)}" y="${HEIGHT - 18}" fill="${theme.muted}" font-size="12" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif">${points[index].date}</text>`,
+    )
+    .join('');
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${WIDTH} ${HEIGHT}" width="100%" role="img" aria-label="${title}">
+  <rect width="${WIDTH}" height="${HEIGHT}" fill="${theme.bg}" stroke="${theme.border}" rx="10"/>
+  <text x="20" y="30" fill="${theme.text}" font-size="18" font-weight="700" font-family="system-ui,-apple-system,sans-serif">${title}</text>
+  ${gridLines}
+  ${yLabels}
+  <path d="${linePath}" fill="none" stroke="${theme.line}" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  ${markers}
+  ${xLabels}
+</svg>`;
+}
 
 await mkdir('generated', { recursive: true });
 
-const browser = await chromium.launch();
-const page = await browser.newPage({
-  viewport: { width: 900, height: 900 },
-  deviceScaleFactor: 2,
-});
+const html = await fetch(DEVELOPER_URL).then((response) => response.text());
+const trendings = extractTrendings(html);
 
-await page.goto(DEVELOPER_URL, { waitUntil: 'networkidle' });
-await page.getByRole('heading', { name: 'GitHub trending history' }).waitFor();
-
-await page.addStyleTag({
-  content: `
-    section .grid { display: block !important; }
-    section .bg-card {
-      width: 100% !important;
-      max-width: 100% !important;
-      margin: 0 0 1rem !important;
-    }
-    section .bg-card > div:not(.absolute) {
-      height: 360px !important;
-    }
-  `,
-});
-
-await page.evaluate(() => window.dispatchEvent(new Event('resize')));
-await page.waitForTimeout(2000);
-
-await page.evaluate(() => {
-  const isBackground = (r, g, b, a) => a < 20 || (r > 235 && g > 235 && b > 235);
-
-  for (const canvas of document.querySelectorAll('section canvas')) {
-    const ctx = canvas.getContext('2d');
-    if (!ctx) continue;
-
-    const { width, height } = canvas;
-    const output = new Uint8ClampedArray(ctx.getImageData(0, 0, width, height).data);
-
-    for (let pass = 0; pass < 3; pass += 1) {
-      const current = new Uint8ClampedArray(output);
-
-      for (let y = 0; y < height; y += 1) {
-        for (let x = 0; x < width; x += 1) {
-          const i = (y * width + x) * 4;
-          if (isBackground(current[i], current[i + 1], current[i + 2], current[i + 3])) continue;
-
-          for (const [dx, dy] of [[1, 0], [-1, 0], [0, 1], [0, -1], [1, 1], [-1, 1], [1, -1], [-1, -1]]) {
-            const nx = x + dx;
-            const ny = y + dy;
-            if (nx < 0 || ny < 0 || nx >= width || ny >= height) continue;
-
-            const ni = (ny * width + nx) * 4;
-            output[ni] = current[i];
-            output[ni + 1] = current[i + 1];
-            output[ni + 2] = current[i + 2];
-            output[ni + 3] = Math.max(output[ni + 3], current[i + 3]);
-          }
-        }
-      }
-    }
-
-    ctx.putImageData(new ImageData(output, width, height), 0, 0);
+for (const chart of CHARTS) {
+  const points = trendings.filter((entry) => entry.language === chart.language);
+  if (!points.length) {
+    throw new Error(`No ranking points found for ${chart.title}`);
   }
-});
 
-const section = page
-  .locator('section')
-  .filter({ has: page.getByRole('heading', { name: 'GitHub trending history' }) });
-
-for (const chart of CHARTS) {
-  const card = section.locator('div.bg-card').filter({ hasText: chart.label });
-  await card.screenshot({ path: `generated/${chart.name}.png` });
-  console.log(`Saved generated/${chart.name}.png`);
+  for (const themeName of Object.keys(THEMES)) {
+    const suffix = themeName === 'dark' ? '-dark' : '';
+    const output = `generated/trendshift-${chart.key}${suffix}.svg`;
+    await writeFile(output, buildSvg(chart.title, points, themeName));
+    console.log(`Saved ${output} (${points.length} points)`);
+  }
 }
-
-await page.addStyleTag({
-  content: `
-    html, body { background: #0d1117 !important; }
-    section .bg-card {
-      background: #161b22 !important;
-      border-color: #30363d !important;
-    }
-    section .bg-card .absolute {
-      color: #e6edf3 !important;
-    }
-    section .bg-card > div:not(.absolute) {
-      filter: invert(1) hue-rotate(180deg) brightness(0.95) contrast(1.1);
-    }
-  `,
-});
-
-for (const chart of CHARTS) {
-  const card = section.locator('div.bg-card').filter({ hasText: chart.label });
-  await card.screenshot({ path: `generated/${chart.name}-dark.png` });
-  console.log(`Saved generated/${chart.name}-dark.png`);
-}
-
-await browser.close();
