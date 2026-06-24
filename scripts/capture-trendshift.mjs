@@ -90,10 +90,12 @@ function buildSvg(title, points, themeName) {
     .join('');
 
   const xLabels = labelIndexes
-    .map(
-      (index) =>
-        `<text x="${xAt(index).toFixed(1)}" y="${HEIGHT - 18}" fill="${theme.muted}" font-size="12" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif">${points[index].date}</text>`,
-    )
+    .map((index, labelPos) => {
+      const anchor =
+        labelPos === 0 ? 'start' : labelPos === labelIndexes.length - 1 ? 'end' : 'middle';
+
+      return `<text x="${xAt(index).toFixed(1)}" y="${HEIGHT - 18}" fill="${theme.muted}" font-size="12" text-anchor="${anchor}" font-family="system-ui,-apple-system,sans-serif">${points[index].date}</text>`;
+    })
     .join('');
 
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${WIDTH} ${HEIGHT}" width="100%" role="img" aria-label="${title}">
