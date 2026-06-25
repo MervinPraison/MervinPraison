@@ -114,6 +114,22 @@ await mkdir('generated', { recursive: true });
 const html = await fetch(DEVELOPER_URL).then((response) => response.text());
 const trendings = extractTrendings(html);
 
+const history = {
+  source: DEVELOPER_URL,
+  updatedAt: new Date().toISOString(),
+  allLanguage: trendings
+    .filter((entry) => entry.language === null)
+    .map(({ date, rank }) => ({ date, rank })),
+  python: trendings
+    .filter((entry) => entry.language === 'python')
+    .map(({ date, rank }) => ({ date, rank })),
+};
+
+await writeFile('generated/trendshift-history.json', `${JSON.stringify(history, null, 2)}\n`);
+console.log(
+  `Saved generated/trendshift-history.json (${history.allLanguage.length} all-language, ${history.python.length} python)`,
+);
+
 for (const chart of CHARTS) {
   const points = trendings.filter((entry) => entry.language === chart.language);
   if (!points.length) {
