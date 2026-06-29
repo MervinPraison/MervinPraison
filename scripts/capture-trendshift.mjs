@@ -1,6 +1,8 @@
-import { mkdir, writeFile } from 'fs/promises';
+import { mkdir, readFile, writeFile } from 'fs/promises';
 
 const DEVELOPER_URL = 'https://trendshift.io/developers/9425';
+const USER_AGENT =
+  'MervinPraison-profile-bot/1.0 (+https://github.com/MervinPraison/MervinPraison)';
 const CHARTS = [
   { key: 'all-language', title: 'All Language Ranking', language: null },
   { key: 'python', title: 'Python Ranking', language: 'python' },
@@ -49,6 +51,13 @@ function extractTrendings(html) {
   }
 
   return trendings;
+}
+
+function rankingSnapshot(history) {
+  return JSON.stringify({
+    allLanguage: history.allLanguage,
+    python: history.python,
+  });
 }
 
 function buildSvg(title, points, themeName) {
@@ -111,8 +120,14 @@ function buildSvg(title, points, themeName) {
 
 await mkdir('generated', { recursive: true });
 
-const html = await fetch(DEVELOPER_URL).then((response) => response.text());
-const trendings = extractTrendings(html);
+const response = await fetch(DEVELOPER_URL, {
+  headers: { 'User-Agent': USER_AGENT, Accept: 'text/html' },
+});
+if (!response.ok) {
+  throw new Error(`Trendshift request failed: ${response.status} ${response.statusText}`);
+}
+
+const trendings = extractTrendings(await response.text());
 
 const history = {
   source: DEVELOPER_URL,
@@ -124,6 +139,18 @@ const history = {
     .filter((entry) => entry.language === 'python')
     .map(({ date, rank }) => ({ date, rank })),
 };
+
+let previous = null;
+try {
+  previous = JSON.parse(await readFile('generated/trendshift-history.json', 'utf8'));
+} catch {
+  // First run or missing history file.
+}
+
+if (previous && rankingSnapshot(previous) === rankingSnapshot(history)) {
+  console.log('No new Trendshift ranking data; skipping file updates.');
+  process.exit(0);
+}
 
 await writeFile('generated/trendshift-history.json', `${JSON.stringify(history, null, 2)}\n`);
 console.log(
