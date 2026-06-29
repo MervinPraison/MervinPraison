@@ -5,14 +5,22 @@ on:
     - cron: "0 0 * * *" # Every day at midnight UTC
   workflow_dispatch:
 
+concurrency:
+  group: profile-content-updates
+  cancel-in-progress: false
+
 jobs:
   generate:
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    permissions:
+      contents: write
     
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Generate snake animation
         uses: Platane/snk@v3
@@ -27,5 +35,6 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add output/
-          git commit -m 'chore: update snake contribution graph' || echo "No changes to commit"
+          git diff --staged --quiet || git commit -m 'chore: update snake contribution graph'
+          git pull --rebase origin main
           git push

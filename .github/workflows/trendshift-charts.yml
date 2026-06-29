@@ -5,6 +5,10 @@ on:
     - cron: "0 6 * * 1" # Weekly on Monday at 06:00 UTC
   workflow_dispatch:
 
+concurrency:
+  group: profile-content-updates
+  cancel-in-progress: false
+
 jobs:
   capture:
     runs-on: ubuntu-latest
@@ -15,6 +19,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -29,5 +35,6 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
           git add generated/trendshift-history.json generated/trendshift-all-language.svg generated/trendshift-all-language-dark.svg generated/trendshift-python.svg generated/trendshift-python-dark.svg
-          git commit -m 'chore: update Trendshift trending history charts' || echo "No changes to commit"
+          git diff --staged --quiet || git commit -m 'chore: update Trendshift trending history charts'
+          git pull --rebase origin main
           git push

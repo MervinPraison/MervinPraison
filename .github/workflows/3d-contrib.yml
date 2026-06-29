@@ -5,14 +5,22 @@ on:
     - cron: "0 0 * * *" # Every day at midnight UTC
   workflow_dispatch:
 
+concurrency:
+  group: profile-content-updates
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    permissions:
+      contents: write
     
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Generate 3D contribution calendar
         uses: yoshi389111/github-profile-3d-contrib@0.7.1
@@ -24,6 +32,7 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add -A
-          git commit -m 'chore: update 3D contribution calendar' || echo "No changes to commit"
+          git add profile-3d-contrib/
+          git diff --staged --quiet || git commit -m 'chore: update 3D contribution calendar'
+          git pull --rebase origin main
           git push
