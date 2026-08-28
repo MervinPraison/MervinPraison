@@ -1,6 +1,6 @@
 {
   "source": "https://trendshift.io/developers/9425",
-  "updatedAt": "2026-08-27T17:11:48.952Z",
+  "updatedAt": "2026-08-28T17:58:38.506Z",
   "allLanguage": [
     {
       "date": "2025-05-29",
@@ -173,6 +173,10 @@
     {
       "date": "2026-08-26",
       "rank": 18
+    },
+    {
+      "date": "2026-08-28",
+      "rank": 7
     }
   ],
   "python": [
@@ -571,6 +575,10 @@
     {
       "date": "2026-08-27",
       "rank": 24
+    },
+    {
+      "date": "2026-08-28",
+      "rank": 1
     }
   ]
 }
