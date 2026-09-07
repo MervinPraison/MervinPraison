@@ -1,6 +1,6 @@
 {
   "source": "https://trendshift.io/developers/9425",
-  "updatedAt": "2026-09-06T10:03:21.089Z",
+  "updatedAt": "2026-09-07T11:16:34.081Z",
   "allLanguage": [
     {
       "date": "2025-05-29",
@@ -610,7 +610,11 @@
     },
     {
       "date": "2026-09-06",
-      "rank": 18
+      "rank": 19
+    },
+    {
+      "date": "2026-09-07",
+      "rank": 19
     }
   ]
 }
